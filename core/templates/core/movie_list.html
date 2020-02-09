@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+All the Movies
+{% endblock %}
+
+{% block main %}
+<ul>
+  {% for movie in object_list %}
+    <li>
+      <a href="{% url 'core:MovieDetail' pk=movie.id %}">
+        {{ movie }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}
